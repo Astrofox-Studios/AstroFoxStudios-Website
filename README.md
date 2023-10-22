@@ -1,2 +1,0 @@
-# Destiny Games
- website
