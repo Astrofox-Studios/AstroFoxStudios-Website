@@ -14,6 +14,7 @@
 .logo {
     width: 50px; /* Adjust the size as needed */
     height: 50px; /* Adjust the size as needed */
+    display: inline-block;
     margin-right: 10px; /* Add space between the logo and text */
     border-radius: 15%; /* Create a circular border for the logo */
     overflow: hidden; /* Ensure the image is contained within the border */
