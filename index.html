@@ -6,165 +6,79 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff0000">
-    <meta name="msapplication-TileColor" content="#cfd4f6">
-    <meta name="theme-color" content="#cfd4f6">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kufam:700|Kufam:400">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astrofox Studios Hub</title>
+    <title>Destiny Games</title>
     <style>
         body {
-            background-color: #1a1a1a;
-            color: #ffffff;
-            font-family: Kufam, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #fff;
         }
 
         .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        .header {
-            text-align: center;
-            background-color: #333;
-            padding: 10px;
+        iframe {
             width: 100%;
+            height: 300px;
         }
 
-        .rectangles {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 80px;
-            margin-top: 80px;
-        }
-
-        .rectangle1 {
-            background-color: #cb78ff;
-            color: #cb78ff;
+        .roadmap {
+            background-color: #333;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
-            width: 200px;
-            height: 300px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
 
-        .rectangle2 {
-            background-color: #CFD4F6;
-            color: #CFD4F6;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            width: 200px;
-            height: 300px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .top-text, .bottom-text {
+        .roadmap h2 {
             color: #fff;
-            text-align: center;
         }
 
-        .top-text {
-            margin-top: 10px;
-            margin-bottom: auto;
+        .roadmap ul {
+            list-style-type: none;
+            padding: 0;
         }
 
-        .bottom-text {
-            margin-top: auto;
-            margin-bottom: 10px;
-        }
-
-        .button {
-            background-color: #333;
+        .roadmap li {
             color: #fff;
-            padding: 10px 20px;
-            border-radius: 15px;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .news-banner {
-            background-color: #222;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-            width: 100%;
-            margin: 0;
-            margin-top: 80px
-        }
-
-        .footer {
-            text-align: left;
-            background-color: #333;
-            padding: 20px;
-            width: 100%;
-            height: 150px;
-            margin: 0;
-        }
-
-        .footer p {
-            margin: 0;
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
-<div class="header">
-    <div class="header-content">
-        <h1>Astrofox Studios Hub</h1>
-    </div>
-</div>
-<div class="container">
-    <div class="rectangles">
-        <div class="rectangle1">
-            <h2 class="top-text">Destiny</h2>
-            <h3 class="button">Click</h3>
-            <h2 class="bottom-text">Games!</h2>
+    <header>
+        <h1>Destiny Games - Coming Soon</h1>
+    </header>
+    <div class="container">
+        <h2>Latest Video</h2>
+        <!-- Replace the URL with your YouTube video's embed URL -->
+        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=88DXOD2igOM&t=3s&ab_channel=AstroFoxStudios" frameborder="0" allowfullscreen></iframe>
+        
+        <div class="roadmap">
+            <h2>Roadmap</h2>
+            <ul>
+                <li>Tester 4</li>
+                <li>Weekly Tests!</li>
+                <li>Start on Cosmic Outpost!</li>
+                <li>Both event and Public server open!</li>
+            </ul>
         </div>
-        <div class="rectangle2">
-            <h2 class="top-text">AstroFox</h2>
-            <h3 class="button">Click</h3>
-            <h2 class="bottom-text">Studios!</h2>  
-        </div>
     </div>
-    <!-- Wrap the Font Awesome icons in anchor elements with href attributes -->
-    <div class="icons">
-        <a href="https://discord.gg/uDR9XtrDRC" target="_blank">
-            <i class="fab fa-discord" style="color: white; font-size: 30px;"></i>
-        </a>
-        <a href="https://www.tiktok.com" target="_blank">
-            <i class="fab fa-tiktok" style="color: white; font-size: 30px;"></i>
-        </a>
-        <a href="https://youtube.com/@AstroFox-Studios?si=kVLbawXsk7Jxftd1" target="_blank">
-            <i class="fab fa-youtube" style="color: white; font-size: 30px;"></i>
-        </a>
-        <a href="https://twitter.com/DestinyGamesMC" target="_blank">
-            <i class="fab fa-twitter" style="color: white; font-size: 30px;"></i>
-        </a>
-    </div>
-
-    <div class="news-banner">
-        <h2>Latest News</h2>
-        <p>This is where your latest news updates will appear.</p>
-    </div>
-    <div class="footer">
-        <h2>Astrofox Studios Hub!</h2>
-        <p>Astrofox Studios &copy; 2023</p>
-    </div>
-</div>
 </body>
 </html>
