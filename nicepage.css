@@ -43569,6 +43569,10 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 
+ .u-footer {
+  background-image: linear-gradient(#181f25, #210736);
+}
+
 .u-footer .u-sheet-1 {
   min-height: 271px;
 }
