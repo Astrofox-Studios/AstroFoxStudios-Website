@@ -516,12 +516,15 @@
         }
 
         .team-member {
-            flex: 1 1 300px;
-            margin: 1rem;
-            text-align: center;
-            padding-bottom: 30px;
-            padding-top: 3rem;
-        }
+          flex: 1 1 300px; /* Adjust flex properties */
+          margin: 1rem;
+          text-align: center;
+          padding-bottom: 30px;
+          padding-top: 3rem;
+          position: relative; /* Keep relative positioning */
+          opacity: 1; /* Ensure initial opacity */
+          transition: opacity 0.5s ease;
+      }
 
         .team-member img {
             width: 100%;
@@ -600,6 +603,7 @@
             font-style: italic;
             color: #666;
             margin-right: 1rem;
+            margin-bottom: 2rem;
         }
 
         .team-nav {
@@ -658,6 +662,18 @@
             .team-member {
                 flex-direction: column;
                 text-align: center;
+
+            }
+
+            .team-container {
+                height: 700px; /* Adjust the height as per your design needs */
+                justify-content: flex-end; /* Align content to the bottom */
+
+            }
+
+            .team-nav {
+                justify-content: flex-end; /* Align content to the bottom */
+                
             }
 
             .team-member img {
@@ -666,7 +682,7 @@
             }
 
             .team-member {
-              position: absolute;
+              position: bottom;
               top: 50%;
               left: 50%;
               transform: translate(-50%, -50%);
@@ -682,12 +698,13 @@
             }
 
             .team-member {
-                width: 80%;
-                padding-bottom: 3rem; /* Added extra padding for mobile view */
+                flex: 1 1 100%; /* Take full width on smaller screens */
+                margin: 1rem 0;
+                padding: 3rem 1rem 1rem; /* Adjust padding for better spacing */
             }
 
             .team-info {
-                text-align: center;
+                text-align: center; /* Center align team info on smaller screens */
             }
         }
     </style>
