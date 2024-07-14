@@ -1296,5 +1296,20 @@
             }
         });
     </script>
+    <style>
+        @media (max-width: 768px) {
+          .nav-links { display: none; }
+          .menu-icon { display: block !important; }
+        }
+        </style>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const menuIcon = document.querySelector('.menu-icon');
+          const navLinks = document.querySelector('.nav-links');
+          menuIcon.addEventListener('click', function() {
+            navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
+          });
+        });
+        </script>
 </body>
 </html>
