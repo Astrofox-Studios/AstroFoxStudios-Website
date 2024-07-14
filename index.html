@@ -786,6 +786,9 @@
         }
 
         @media (max-width: 768px) {
+            .nav-links ul {
+                display: none;
+            }
             .menu-icon {
                 display: block;
             }
@@ -884,6 +887,11 @@
         }
         html {
           scroll-behavior: smooth;
+        }
+        .nav-links.active ul {
+            display: flex !important;
+            flex-direction: column;
+            width: 100%;
         }
     </style>
 </head>
@@ -1069,11 +1077,11 @@
                   </div>
               </div>
               <div class="team-member">
-                <img src="https://minepic.org/avatar/malvare_" alt="Mal">
+                <img src="https://minepic.org/avatar/4088ad3f2fbe423d9b067028a5637771" alt="Frog">
                 <div class="team-info">
-                    <h3>Malvare</h3>
-                    <h4>Board Member & Staff Manager</h4>
-                    <p>Hey I'm Mal, Staff Manager at AstroFox, I do many things around here such as, Building, Team Making, and Conceptualizing the Games!</p>
+                    <h3>Frog</h3>
+                    <h4>COO & Head of Backend</h4>
+                    <p>Hi, I'm Frog and im the lead developer here at Astrofox and I'm very skilled at Skript and Java coding. I also like to mess around on Minecraft with the AstroFox staff!</p>
                 </div>
             </div>
             <div class="team-member">
@@ -1093,11 +1101,11 @@
             </div>
           </div>
           <div class="team-member">
-            <img src="https://minepic.org/avatar/4088ad3f2fbe423d9b067028a5637771" alt="Frog">
+            <img src="https://minepic.org/avatar/malvare_" alt="Mal">
             <div class="team-info">
-                <h3>Frog</h3>
-                <h4>Board Member & Head of Backend</h4>
-                <p>Hi, I'm Frog and im the lead developer here at Astrofox and I'm very skilled at Skript and Java coding. I also like to mess around on Minecraft with the AstroFox staff!</p>
+                <h3>Malvare</h3>
+                <h4>Board Member & Staff Manager</h4>
+                <p>Hey I'm Mal, Staff Manager at AstroFox, I do many things around here such as, Building, Team Making, and Conceptualizing the Games!</p>
             </div>
           </div>
           </div>
@@ -1295,6 +1303,15 @@
                 menuIcon.classList.remove('active');
             }
         });
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuIcon = document.querySelector('.menu-icon');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuIcon.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        });
+
     </script>
     <style>
         @media (max-width: 768px) {
