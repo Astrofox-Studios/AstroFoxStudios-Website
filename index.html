@@ -1278,7 +1278,7 @@
 
         menuIcon.addEventListener('click', toggleMenu);
 
-        // Close menu when a link is clicked on mobile
+        // Close menu when a link is clicked
         const navItems = document.querySelectorAll('.nav-links a');
         navItems.forEach(item => {
             item.addEventListener('click', () => {
@@ -1288,17 +1288,9 @@
             });
         });
 
-        // Close menu when clicking outside on mobile
+        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768 && !e.target.closest('nav')) {
-                navLinks.classList.remove('active');
-                menuIcon.classList.remove('active');
-            }
-        });
-
-        // Adjust menu visibility on window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
+            if (window.innerWidth <= 768 && !e.target.closest('nav') && !e.target.closest('.nav-links')) {
                 navLinks.classList.remove('active');
                 menuIcon.classList.remove('active');
             }
