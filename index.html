@@ -1148,37 +1148,44 @@
     });
 });
 
-      // Team slideshow functionality
-      const teamMembers = document.querySelectorAll('.team-member');
-      const prevButton = document.querySelector('.prev-member');
-      const nextButton = document.querySelector('.next-member');
-      const progressSegments = document.querySelectorAll('.progress-segment');
-      let currentMember = 0;
-      let timeOut = 8500;
+        // Team slideshow functionality
+        const teamMembers = document.querySelectorAll('.team-member');
+        const prevButton = document.querySelector('.prev-member');
+        const nextButton = document.querySelector('.next-member');
+        const progressSegments = document.querySelectorAll('.progress-segment');
+        let currentMember = 0;
+        let timeOut = 8500;
+        let slideshowInterval;
 
-      function showMember(index) {
-          teamMembers[currentMember].classList.remove('active');
-          teamMembers[index].classList.add('active');
-          progressSegments[currentMember].classList.remove('active');
-          progressSegments[index].classList.add('active');
-          currentMember = index;
-      }
+        function showMember(index) {
+            teamMembers[currentMember].classList.remove('active');
+            teamMembers[index].classList.add('active');
+            progressSegments[currentMember].classList.remove('active');
+            progressSegments[index].classList.add('active');
+            currentMember = index;
+        }
 
-      function showNextMember() {
-          showMember((currentMember + 1) % teamMembers.length);
-          let timeOut = 8500;
-      }
+        function showNextMember() {
+            showMember((currentMember + 1) % teamMembers.length);
+            updateTimeout(15000); // Set timeout to 30 seconds when next button is clicked
+        }
 
-      function showPrevMember() {
-          showMember((currentMember - 1 + teamMembers.length) % teamMembers.length);
-          let timeOut = 8500;
-      }
+        function showPrevMember() {
+            showMember((currentMember - 1 + teamMembers.length) % teamMembers.length);
+            updateTimeout(15000); // Set timeout to 30 seconds when previous button is clicked
+        }
 
-      nextButton.addEventListener('click', showNextMember);
-      prevButton.addEventListener('click', showPrevMember);
+        function updateTimeout(newTimeout) {
+            timeOut = newTimeout;
+            clearInterval(slideshowInterval);
+            slideshowInterval = setInterval(showNextMember, timeOut);
+        }
 
-      // Auto-advance the slideshow every 8.5 seconds
-      setInterval(showNextMember, timeOut);
+        nextButton.addEventListener('click', showNextMember);
+        prevButton.addEventListener('click', showPrevMember);
+
+        // Auto-advance the slideshow every 8.5 seconds
+        slideshowInterval = setInterval(showNextMember, timeOut);
     </script>
 </body>
 </html>
