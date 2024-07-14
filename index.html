@@ -8,9 +8,9 @@
     <style>
         /* General Styles */
         :root {
-            --primary-color: #3498db;
+            --primary-color: #51D9EC;
             --secondary-color: #2c3e50;
-            --accent-color: #9b59b6; /* Purple accent color */
+            --accent-color: #FF4DFF; /* Purple accent color */
         }
 
         * {
@@ -290,7 +290,7 @@
 
         /* Apply Section */
         .apply {
-            background-color: var(--primary-color);
+            background-color: #3498db;
             padding: 5rem 0;
             text-align: center;
             color: #fff;
@@ -304,6 +304,8 @@
             max-width: 800px;
             margin: 0 auto 2rem;
             font-size: 1.1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
 
         .apply-image {
@@ -315,11 +317,13 @@
             display: flex;
             justify-content: center;
             gap: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
 
         .apply-button {
             display: inline-block;
-            background-color: var(--secondary-color);
+            background-color: var(--primary-color);
             color: #fff;
             padding: 0.8rem 2rem;
             border-radius: 5px;
@@ -436,11 +440,14 @@
             }
 
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.1rem;
+                width: 100%;
             }
 
             .hero-content p {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                width: 100%;
+                
             }
         }
         .faq {
@@ -547,13 +554,15 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             padding: 2rem;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 500px; /* Set a minimum height */
         }
 
         .team-slider {
-            padding-top: 20px;
+            flex-grow: 1;
             position: relative;
             overflow: hidden;
-            height: 400px;
         }
 
         .team-member {
@@ -563,10 +572,13 @@
             width: 100%;
             height: 100%;
             display: flex;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             opacity: 0;
             transition: opacity 0.5s ease;
-            padding-bottom: 30px;
+            padding: 1rem;
+            text-align: center;
         }
 
         .team-member.active {
@@ -574,17 +586,17 @@
         }
 
         .team-member img {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             border-radius: 20px;
             object-fit: cover;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            margin-right: 2rem;
-            
+            margin-bottom: 1rem;
         }
 
         .team-info {
-            text-align: left;
+            text-align: center;
+            max-width: 100%;
         }
 
         .team-info h3 {
@@ -608,9 +620,11 @@
 
         .team-nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            margin-top: 2rem;
+            width: 100%;
+            padding: 0 10px;
+            box-sizing: border-box;
         }
 
         .team-nav button {
@@ -618,29 +632,29 @@
             border: none;
             cursor: pointer;
             transition: transform 0.3s ease;
-            padding: 0;
+            padding: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
+        }
+
+        .team-nav button svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary-color);
         }
 
         .team-nav button:hover {
             transform: scale(1.1);
         }
 
-        .team-nav button svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--primary-color);
-        }
-
         .progress-bar {
             flex-grow: 1;
             height: 4px;
             background-color: #ddd;
-            margin: 0 1rem;
+            margin: 0 10px;
             border-radius: 2px;
             overflow: hidden;
             display: flex;
@@ -659,52 +673,108 @@
 
         /* Responsive Styles for Team Section */
         @media (max-width: 768px) {
-            .team-member {
-                flex-direction: column;
-                text-align: center;
-
-            }
-
             .team-container {
-                height: 700px; /* Adjust the height as per your design needs */
-                justify-content: flex-end; /* Align content to the bottom */
-
+                padding: 1rem;
+                min-height: 600px;
             }
 
-            .team-nav {
-                justify-content: flex-end; /* Align content to the bottom */
-                
+            .team-member {
+                padding: 0.5rem;
             }
 
             .team-member img {
-                margin: 0 auto;
-
+                width: 120px;
+                height: 120px;
             }
 
-            .team-member {
-              position: bottom;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              width: 100%; /* Ensure the slide takes up the full width */
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              opacity: 0;
-              transition: opacity 0.5s ease;
-              padding-bottom: 30px;
-                
-
+            .team-info h3 {
+                font-size: 1.5rem;
             }
 
-            .team-member {
-                flex: 1 1 100%; /* Take full width on smaller screens */
-                margin: 1rem 0;
-                padding: 3rem 1rem 1rem; /* Adjust padding for better spacing */
+            .team-info h4 {
+                font-size: 1rem;
             }
 
-            .team-info {
-                text-align: center; /* Center align team info on smaller screens */
+            .team-info p {
+                font-size: 0.9rem;
+            }
+
+            .team-nav {
+                position: absolute;
+                bottom: 1rem;
+                left: 0;
+                right: 0;
+                padding: 0 5px;
+            }
+
+            .progress-bar {
+                margin: 0 5px;
+            }
+
+            .team-nav button {
+                width: 25px;
+                height: 25px;
+            }
+
+            .team-nav button svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+        .why-choose-us {
+            background-color: #f8f9fa;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .why-choose-us h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 3rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .feature-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -721,7 +791,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#apply">Apply</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#team">Team</a></li>
             </ul>
         </nav>
     </header>
@@ -741,6 +811,32 @@
                 <h1>Welcome to AstroFox Studios</h1>
                 <p>Innovating Minecraft Experiences & Crafting New Worlds</p>
                 <a href="#projects" class="cta-button">Explore Our Projects</a>
+            </div>
+        </section>
+
+        <section class="why-choose-us">
+            <h2>Why Trust AstroFox Studios?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Innovative Events</h3>
+                    <p>Experience unique Minecraft events and experiences crafted by our amazing team of developers.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Focus</h3>
+                    <p>Join a thriving community of not just Minecraft players but game developers and fans!</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Years of Experience</h3>
+                    <p>Founded in 2022 and creating events since 2021, benefit from our extensive knowledge in Minecraft development.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Commission Work</h3>
+                    <p>Let us bring your Minecraft visions to life with custom commissions. These are very rare but we welcome new projects!</p>
+                </div>
             </div>
         </section>
 
@@ -964,6 +1060,7 @@
       const nextButton = document.querySelector('.next-member');
       const progressSegments = document.querySelectorAll('.progress-segment');
       let currentMember = 0;
+      let timeOut = 8500;
 
       function showMember(index) {
           teamMembers[currentMember].classList.remove('active');
@@ -975,17 +1072,19 @@
 
       function showNextMember() {
           showMember((currentMember + 1) % teamMembers.length);
+          let timeOut = 8500;
       }
 
       function showPrevMember() {
           showMember((currentMember - 1 + teamMembers.length) % teamMembers.length);
+          let timeOut = 8500;
       }
 
       nextButton.addEventListener('click', showNextMember);
       prevButton.addEventListener('click', showPrevMember);
 
       // Auto-advance the slideshow every 8.5 seconds
-      setInterval(showNextMember, 8500);
+      setInterval(showNextMember, timeOut);
     </script>
 </body>
 </html>
