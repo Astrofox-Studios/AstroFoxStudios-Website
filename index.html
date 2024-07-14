@@ -5,60 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AstroFox Studios</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* General Styles */
+    cssCopy<style>
+        /* CSS Variables for theming */
         :root {
             --primary-color: #51D9EC;
             --secondary-color: #2c3e50;
-            --accent-color: #FF4DFF; /* Purple accent color */
+            --accent-color: #FF4DFF;
+            --bg-color: #f4f4f4;
+            --text-color: #333;
+            --header-bg: rgba(44, 62, 80, 0.4);
+            --header-text: #ecf0f1;
+            --card-bg: #ffffff;
+            --card-text: #333;
+            --footer-bg: #34495e;
+            --footer-text: #ecf0f1;
         }
-
+    
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #f4f4f4;
+            --header-bg: rgba(0, 0, 0, 0.6);
+            --header-text: #ecf0f1;
+            --card-bg: #2c2c2c;
+            --card-text: #f4f4f4;
+            --footer-bg: #1a1a1a;
+            --footer-text: #ecf0f1;
+        }
+    
+        /* General Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-              /* Custom scrollbar styles */
+    
+        /* Custom scrollbar styles */
         ::-webkit-scrollbar {
-            width: 12px; /* Width of the scrollbar */
-            background-color: #1c1c1c; /* Background color of the scrollbar track */
+            width: 12px;
+            background-color: var(--bg-color);
         }
-
+    
         ::-webkit-scrollbar-thumb {
-            background-color: var(--primary-color); /* Color of the scrollbar thumb */
-            border-radius: 10px; /* Rounded corners for the scrollbar thumb */
-            border: 2px solid #1c1c1c; /* Border around the scrollbar thumb */
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            border: 2px solid var(--bg-color);
         }
-
+    
         ::-webkit-scrollbar-thumb:hover {
-            background-color: var(--secondary-color); /* Color of the scrollbar thumb on hover */
+            background-color: var(--secondary-color);
         }
-
+    
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
+            color: var(--text-color);
+            background-color: var(--bg-color);
         }
-
+    
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
+    
         /* Header Styles */
         header {
-            background-color: rgba(44, 62, 80, 0.4); /* Translucent background */
-            backdrop-filter: blur(10px); /* Blur effect */
-            color: #ecf0f1;
+            background-color: var(--header-bg);
+            backdrop-filter: blur(10px);
+            color: var(--header-text);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
         }
-
+    
         nav {
             display: flex;
             justify-content: space-between;
@@ -67,50 +88,66 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-
+    
         .logo {
             display: flex;
             align-items: center;
         }
-
+    
         .logo img {
             width: 50px;
             margin-right: 10px;
         }
-
+    
         .logo span {
             font-size: 1.5rem;
             font-weight: bold;
         }
-
+    
+        /* Update the existing nav ul styles */
         nav ul {
             display: flex;
             list-style: none;
+            align-items: center; /* This will vertically align the items */
         }
 
         nav ul li {
             margin-left: 20px;
         }
 
+        /* Update the dark mode toggle button styles */
+        .dark-mode-toggle {
+            background: none;
+            border: none;
+            color: var(--header-text);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Remove the margin-left from the existing .dark-mode-toggle style if it exists */
+    
         nav ul li a {
-            color: #ecf0f1;
+            color: var(--header-text);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
-
+    
         nav ul li a:hover {
             color: var(--accent-color);
         }
-
+    
         /* Carousel Styles */
         .carousel {
             position: relative;
             height: 100vh;
             overflow: hidden;
-            
         }
-
+    
         .carousel-item {
             position: absolute;
             top: 0;
@@ -123,12 +160,11 @@
             transition: opacity 1s ease-in-out;
             backdrop-filter: blur(10px);
         }
-
+    
         .carousel-item.active {
             opacity: 1;
-            
         }
-
+    
         .hero-content {
             position: absolute;
             top: 50%;
@@ -137,19 +173,18 @@
             text-align: center;
             color: #fff;
             z-index: 1;
-            
         }
-
+    
         .hero-content h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
-
+    
         .hero-content p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
         }
-
+    
         .cta-button {
             display: inline-block;
             background-color: var(--primary-color);
@@ -160,24 +195,24 @@
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
-
+    
         .cta-button:hover {
             background-color: var(--accent-color);
         }
-
+    
         /* Projects Section */
         .projects {
             padding: 5rem 0;
-            background-color: #fff;
+            background-color: var(--bg-color);
         }
-
+    
         .projects h2 {
             text-align: center;
             margin-bottom: 3rem;
             font-size: 2.5rem;
-            color: var(--secondary-color);
+            color: var(--text-color);
         }
-
+    
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -186,120 +221,106 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-
-    .project-card {
-        background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        position: relative;
-        color: #fff; /* White text */
-        height: 300px; /* Fixed height for consistent appearance */
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-
-.project-card {
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    position: relative;
-    color: #fff;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background-size: cover;
-    background-position: center center; /* This centers the background image */
-    background-repeat: no-repeat;
-}
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: inherit; /* This inherits the background from the parent */
-    opacity: 0.6;
-    z-index: 0;
-    transition: opacity 0.3s ease;
-}
-
-.project-card:hover::before {
-    opacity: 0.8;
-}
-
-.project-card-content {
-    position: relative;
-    z-index: 1;
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-    .project-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .project-card p {
-        margin-bottom: 1rem;
-    }
-
-    .project-link {
-        display: inline-block;
-        background-color: var(--primary-color);
-        color: #fff;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-    }
-
-    .project-link:hover {
-        background-color: var(--accent-color);
-    }
-
+    
+        .project-card {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            color: #fff;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+    
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            opacity: 0.6;
+            z-index: 0;
+            transition: opacity 0.3s ease;
+        }
+    
+        .project-card:hover::before {
+            opacity: 0.8;
+        }
+    
+        .project-card-content {
+            position: relative;
+            z-index: 1;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+    
+        .project-card p {
+            margin-bottom: 1rem;
+        }
+    
+        .project-link {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+    
+        .project-link:hover {
+            background-color: var(--accent-color);
+        }
+    
         /* About Section */
         .about {
-            background-color: #ecf0f1;
+            background-color: var(--card-bg);
             padding: 5rem 0;
         }
-
+    
         .about h2 {
             text-align: center;
             margin-bottom: 2rem;
             font-size: 2.5rem;
-            color: var(--secondary-color);
+            color: var(--text-color);
         }
-
+    
         .about p {
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
             font-size: 1.1rem;
-            color: #34495e;
+            color: var(--text-color);
             padding: 0 20px;
         }
-
+    
         /* Apply Section */
         .apply {
-            background-color: #3498db;
+            background-color: var(--primary-color);
             padding: 5rem 0;
             text-align: center;
             color: #fff;
         }
-
+    
         .apply h2 {
             margin-bottom: 1rem;
         }
-
+    
         .apply p {
             max-width: 800px;
             margin: 0 auto 2rem;
@@ -307,12 +328,12 @@
             padding-left: 1rem;
             padding-right: 1rem;
         }
-
+    
         .apply-image {
             width: 200px;
             margin-bottom: 2rem;
         }
-
+    
         .apply-buttons {
             display: flex;
             justify-content: center;
@@ -320,10 +341,10 @@
             padding-left: 1rem;
             padding-right: 1rem;
         }
-
+    
         .apply-button {
             display: inline-block;
-            background-color: var(--primary-color);
+            background-color: var(--secondary-color);
             color: #fff;
             padding: 0.8rem 2rem;
             border-radius: 5px;
@@ -331,24 +352,24 @@
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
-
+    
         .apply-button:hover {
             background-color: var(--accent-color);
         }
-
+    
         /* Contact Section */
         .contact {
             padding: 5rem 0;
-            background-color: var(--secondary-color);
-            color: #ecf0f1;
+            background-color: var(--card-bg);
+            color: var(--text-color);
         }
-
+    
         .contact h2 {
             text-align: center;
             margin-bottom: 3rem;
             font-size: 2.5rem;
         }
-
+    
         form {
             max-width: 600px;
             margin: 0 auto;
@@ -356,7 +377,7 @@
             flex-direction: column;
             padding: 0 20px;
         }
-
+    
         form input,
         form textarea {
             margin-bottom: 1rem;
@@ -364,13 +385,15 @@
             border: none;
             border-radius: 5px;
             font-size: 1rem;
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
-
+    
         form textarea {
             height: 150px;
             resize: vertical;
         }
-
+    
         form button {
             background-color: var(--primary-color);
             color: #fff;
@@ -381,77 +404,188 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-
+    
         form button:hover {
             background-color: var(--accent-color);
         }
-
+    
         /* Footer */
         footer {
-            background-color: #34495e;
-            color: #ecf0f1;
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
             text-align: center;
             padding: 2rem 0;
         }
-
+    
         .footer-logo {
             display: block;
             margin: 0 auto 1rem;
             width: auto;
             height: 100px;
         }
-
+    
         .social-links {
             text-align: center;
             margin-bottom: 1rem;
         }
-        html {
-          scroll-behavior: smooth;
-        }
-
+    
         .social-links a {
             display: inline-block;
             margin: 0 10px;
-            color: #ecf0f1;
+            color: var(--footer-text);
             font-size: 1.5rem;
             transition: color 0.3s ease;
         }
-
+    
         .social-links a:hover {
             color: var(--accent-color);
         }
-
+    
         footer p {
             font-size: 0.9rem;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-            }
-
-            nav ul {
-                margin-top: 1rem;
-            }
-
-            nav ul li {
-                margin: 0 10px;
-            }
-
-            .hero-content h1 {
-                font-size: 2.1rem;
-                width: 100%;
-            }
-
-            .hero-content p {
-                font-size: 1.1rem;
-                width: 100%;
-                
-            }
+    
+        /* Team Section */
+        .team {
+            background-color: var(--bg-color);
+            padding: 5rem 0;
+            text-align: center;
         }
+    
+        .team h2 {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 3rem;
+        }
+    
+        .team-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 500px;
+        }
+    
+        .team-slider {
+            flex-grow: 1;
+            position: relative;
+            overflow: hidden;
+        }
+    
+        .team-member {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            padding: 1rem;
+            text-align: center;
+        }
+    
+        .team-member.active {
+            opacity: 1;
+        }
+    
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+    
+        .team-info {
+            text-align: center;
+            max-width: 100%;
+        }
+    
+        .team-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+    
+        .team-info h4 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+    
+        .team-info p {
+            font-style: italic;
+            color: var(--text-color);
+            margin-right: 1rem;
+            margin-bottom: 2rem;
+        }
+    
+        .team-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+    
+        .team-nav button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+        }
+    
+        .team-nav button svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary-color);
+        }
+    
+        .team-nav button:hover {
+            transform: scale(1.1);
+        }
+    
+        .progress-bar {
+            flex-grow: 1;
+            height: 4px;
+            background-color: var(--bg-color);
+            margin: 0 10px;
+            border-radius: 2px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .progress-segment {
+            flex-grow: 1;
+            height: 100%;
+            background-color: var(--bg-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .progress-segment.active {
+            background-color: var(--primary-color);
+        }
+
+        /* FAQ Section */
         .faq {
-            background-color: rgba(255, 255, 255, 0.39);
+            background-color: var(--bg-color);
             padding: 60px 20px;
         }
 
@@ -468,11 +602,11 @@
             max-width: 800px;
             margin: 0 auto;
             width: 100%;
-            grid-template-columns: 1fr; /* Ensure single column layout on all screens */
+            grid-template-columns: 1fr;
         }
 
         .faq-item {
-            background-color: rgba(100, 100, 100, 0.082);
+            background-color: var(--card-bg);
             border-radius: 10px;
             overflow: hidden;
             transition: all 0.3s ease;
@@ -489,190 +623,179 @@
             cursor: pointer;
             font-size: clamp(1rem, 3vw, 1.2rem);
             color: var(--primary-color);
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: var(--card-bg);
             transition: background-color 0.3s ease;
         }
 
         .faq-item h3:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: var(--bg-color);
         }
 
         .faq-answer {
             padding: 0 15px;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease, 0.3s ease;
+            transition: max-height 0.3s ease, padding 0.3s ease;
             font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: var(--text-color);
         }
 
         .faq-answer.active {
             max-height: 300px;
             padding: 15px;
         }
-        /* Meet the Team Section */
-        .team {
-            background-color: #f8f9fa;
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background-color: var(--bg-color);
             padding: 5rem 0;
             text-align: center;
         }
-        .team-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 2rem 0;
-        }
 
-        .team-member {
-          flex: 1 1 300px; /* Adjust flex properties */
-          margin: 1rem;
-          text-align: center;
-          padding-bottom: 30px;
-          padding-top: 3rem;
-          position: relative; /* Keep relative positioning */
-          opacity: 1; /* Ensure initial opacity */
-          transition: opacity 0.5s ease;
-      }
-
-        .team-member img {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 1 / 1; /* Ensures the image is always square */
-            object-fit: cover;
-        }
-
-        .team h2 {
+        .why-choose-us h2 {
             font-size: 2.5rem;
-            color: var(--secondary-color);
+            color: var(--text-color);
             margin-bottom: 3rem;
         }
 
-        .team-container {
-            max-width: 900px;
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
             margin: 0 auto;
-            background-color: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 0 20px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
             padding: 2rem;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            min-height: 500px; /* Set a minimum height */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .team-slider {
-            flex-grow: 1;
-            position: relative;
-            overflow: hidden;
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .team-member {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        .team-member.active {
-            opacity: 1;
-        }
-
-        .team-member img {
-            width: 150px;
-            height: 150px;
-            border-radius: 20px;
-            object-fit: cover;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
             margin-bottom: 1rem;
         }
 
-        .team-info {
-            text-align: center;
-            max-width: 100%;
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
         }
 
-        .team-info h3 {
-            font-size: 1.8rem;
+        .feature-card p {
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        /* Meet CEOs Section */
+        .meet-ceos {
+            background-color: var(--bg-color);
+            padding: 5rem 0;
+        }
+
+        .meet-ceos h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 3rem;
+        }
+
+        .ceos-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .ceos-image {
+            max-width: 40%;
+        }
+
+        .ceos-text {
+            flex: 1;
+        }
+
+        .ceo-info {
+            margin-bottom: 2rem;
+        }
+
+        .ceo-info h3 {
+            font-size: 1.5rem;
             color: var(--primary-color);
             margin-bottom: 0.5rem;
         }
 
-        .team-info h4 {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
+        .ceos-text p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
-        .team-info p {
-            font-style: italic;
-            color: #666;
-            margin-right: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .team-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 0 10px;
-            box-sizing: border-box;
-        }
-
-        .team-nav button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            padding: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 30px;
-            height: 30px;
-        }
-
-        .team-nav button svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--primary-color);
-        }
-
-        .team-nav button:hover {
-            transform: scale(1.1);
-        }
-
-        .progress-bar {
-            flex-grow: 1;
-            height: 4px;
-            background-color: #ddd;
-            margin: 0 10px;
-            border-radius: 2px;
-            overflow: hidden;
-            display: flex;
-        }
-
-        .progress-segment {
-            flex-grow: 1;
-            height: 100%;
-            background-color: #ddd;
-            transition: background-color 0.3s ease;
-        }
-
-        .progress-segment.active {
+        .ceos-text .cta-button {
+            display: inline-block;
             background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
         }
 
-        /* Responsive Styles for Team Section */
+        .ceos-text .cta-button:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+                justify-content: center; /* Center items on smaller screens */
+            }
+
+            nav ul li {
+                margin: 0.5rem 10px; /* Add vertical margin for wrapped items */
+            }
+
+            .hero-content h1 {
+                font-size: 2.1rem;
+                width: 100%;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+                width: 100%;
+            }
+
+            .ceos-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .ceos-image {
+                max-width: 100%;
+                margin-bottom: 2rem;
+            }
+
             .team-container {
                 padding: 1rem;
                 min-height: 600px;
@@ -721,135 +844,6 @@
                 height: 18px;
             }
         }
-        .why-choose-us {
-            background-color: #f8f9fa;
-            padding: 5rem 0;
-            text-align: center;
-        }
-
-        .why-choose-us h2 {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 3rem;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .feature-card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .feature-card i {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-
-        .feature-card p {
-            color: #666;
-            font-size: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        .meet-ceos {
-            background-color: #fff;
-            padding: 5rem 0;
-        }
-
-        .meet-ceos h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 3rem;
-        }
-
-        .ceos-content {
-            display: flex;
-            align-items: flex-start;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .ceos-image {
-            max-width: 40%;
-        }
-
-        .ceos-text {
-            flex: 1;
-        }
-
-        .ceo-info {
-            margin-bottom: 2rem;
-        }
-
-        .ceo-info h3 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .ceos-text p {
-            font-size: 1.1rem;
-            color: #333;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .ceos-text .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 0.8rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            margin-top: 1rem;
-        }
-
-        .ceos-text .cta-button:hover {
-            background-color: var(--accent-color);
-        }
-
-        @media (max-width: 768px) {
-            .ceos-content {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .ceos-image {
-                max-width: 100%;
-                margin-bottom: 2rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -865,6 +859,11 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#apply">Apply</a></li>
                 <li><a href="#team">Team</a></li>
+                <li>
+                    <button id="darkModeToggle" class="dark-mode-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -1113,41 +1112,38 @@
         </div>
         <p>&copy; 2024 AstroFox Studios. All rights reserved.</p>
     </footer>
-        <script>
+    <script>
         // Carousel functionality
         const carouselItems = document.querySelectorAll('.carousel-item');
         let currentItem = 0;
-
+    
         function showNextItem() {
             carouselItems[currentItem].classList.remove('active');
             currentItem = (currentItem + 1) % carouselItems.length;
             carouselItems[currentItem].classList.add('active');
         }
-
+    
         setInterval(showNextItem, 5000); // Change image every 5 seconds
-            
-        
-        
-  document.addEventListener('DOMContentLoaded', function () {
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('h3');
-        const answer = item.querySelector('.faq-answer');
-        
-        question.addEventListener('click', () => {
-            // Toggle the active class on the answer
-            answer.classList.toggle('active');
-            
-            // Close other open FAQ items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.querySelector('.faq-answer').classList.remove('active');
-                }
+    
+        // FAQ functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('h3');
+                const answer = item.querySelector('.faq-answer');
+                
+                question.addEventListener('click', () => {
+                    answer.classList.toggle('active');
+                    
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.querySelector('.faq-answer').classList.remove('active');
+                        }
+                    });
+                });
             });
         });
-    });
-});
-
+    
         // Team slideshow functionality
         const teamMembers = document.querySelectorAll('.team-member');
         const prevButton = document.querySelector('.prev-member');
@@ -1156,7 +1152,7 @@
         let currentMember = 0;
         let timeOut = 8500;
         let slideshowInterval;
-
+    
         function showMember(index) {
             teamMembers[currentMember].classList.remove('active');
             teamMembers[index].classList.add('active');
@@ -1164,28 +1160,66 @@
             progressSegments[index].classList.add('active');
             currentMember = index;
         }
-
+    
         function showNextMember() {
             showMember((currentMember + 1) % teamMembers.length);
-            updateTimeout(15000); // Set timeout to 30 seconds when next button is clicked
+            updateTimeout(15000);
         }
-
+    
         function showPrevMember() {
             showMember((currentMember - 1 + teamMembers.length) % teamMembers.length);
-            updateTimeout(15000); // Set timeout to 30 seconds when previous button is clicked
+            updateTimeout(15000);
         }
-
+    
         function updateTimeout(newTimeout) {
             timeOut = newTimeout;
             clearInterval(slideshowInterval);
             slideshowInterval = setInterval(showNextMember, timeOut);
         }
-
+    
         nextButton.addEventListener('click', showNextMember);
         prevButton.addEventListener('click', showPrevMember);
-
-        // Auto-advance the slideshow every 8.5 seconds
+    
         slideshowInterval = setInterval(showNextMember, timeOut);
+    
+        // Dark mode functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            updateToggleButton(theme);
+        }
+    
+        function updateToggleButton(theme) {
+            const icon = darkModeToggle.querySelector('i');
+            if (theme === 'dark') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+    
+        // Check for saved user preference, otherwise use system preference
+        const savedTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
+        setTheme(savedTheme);
+    
+        // Listen for toggle button click
+        darkModeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+    
+        // Listen for system preference changes
+        prefersDarkScheme.addListener((e) => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
     </script>
 </body>
 </html>
