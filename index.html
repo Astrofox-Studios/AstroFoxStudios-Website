@@ -68,18 +68,17 @@
             padding: 0 20px;
         }
     
-        /* Header Styles */
         header {
             background-color: var(--header-bg);
             backdrop-filter: blur(10px);
-            color: #ad9bfa;
+            color: var(--header-text);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
         }
-    
+
         nav {
             display: flex;
             justify-content: space-between;
@@ -88,31 +87,59 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-    
+
         .logo {
             display: flex;
             align-items: center;
         }
-    
+
         .logo img {
-            width: 50px;
+            width: 40px;
             margin-right: 10px;
         }
-    
+
         .logo span {
             font-size: 1.5rem;
             font-weight: bold;
-        }
-    
-        /* Update the existing nav ul styles */
-        nav ul {
-            display: flex;
-            list-style: none;
-            align-items: center; /* This will vertically align the items */
+            color: #ad9bfa;
         }
 
-        nav ul li {
+        .menu-icon {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu-icon span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--header-text);
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        .nav-links ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links ul li {
             margin-left: 20px;
+        }
+
+        .nav-links ul li a {
+            color: var(--header-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links ul li a:hover {
+            color: var(--accent-color);
         }
 
         /* Update the dark mode toggle button styles */
@@ -130,16 +157,6 @@
 
         /* Remove the margin-left from the existing .dark-mode-toggle style if it exists */
     
-        nav ul li a {
-            color: var(--header-text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-    
-        nav ul li a:hover {
-            color: var(--accent-color);
-        }
     
         /* Carousel Styles */
         .carousel {
@@ -760,21 +777,42 @@
             background-color: var(--accent-color);
         }
 
-        /* Responsive Design */
+        /* Mobile menu styles */
+        .menu-icon {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--header-text);
+        }
+
         @media (max-width: 768px) {
-            nav {
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--header-bg);
+                padding: 1rem 0;
+            }
+
+            .nav-links.active {
+                display: block;
+            }
+
+            .nav-links ul {
                 flex-direction: column;
+                align-items: center;
             }
 
-            nav ul {
-                margin-top: 1rem;
-                flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-                justify-content: center; /* Center items on smaller screens */
+            .nav-links ul li {
+                margin: 10px 0;
             }
 
-            nav ul li {
-                margin: 0.5rem 10px; /* Add vertical margin for wrapped items */
-            }
 
             .hero-content h1 {
                 font-size: 2.1rem;
@@ -856,18 +894,25 @@
                 <img src="https://astrofoxstudios.com/images/logo.png" alt="AstroFox Studios Logo">
                 <span>AstroFox Studios</span>
             </div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#apply">Apply</a></li>
-                <li><a href="#team">Team</a></li>
-                <li>
-                    <button id="darkModeToggle" class="dark-mode-toggle">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </li>
-            </ul>
+            <button class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#apply">Apply</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li>
+                        <button id="darkModeToggle" class="dark-mode-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -1221,6 +1266,41 @@
         prefersDarkScheme.addListener((e) => {
             if (!localStorage.getItem('theme')) {
                 setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+
+        function toggleMenu() {
+            navLinks.classList.toggle('active');
+            menuIcon.classList.toggle('active');
+        }
+
+        menuIcon.addEventListener('click', toggleMenu);
+
+        // Close menu when a link is clicked on mobile
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && !e.target.closest('nav')) {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('active');
+            }
+        });
+
+        // Adjust menu visibility on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('active');
             }
         });
     </script>
