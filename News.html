@@ -13,14 +13,14 @@
             --accent-color: #FF4DFF;
             --bg-color: #f4f4f4;
             --text-color: #333;
-            --header-bg: #2c3e5066;
+            --header-bg: rgba(44, 62, 80, 0.4);
             --header-text: #ecf0f1;
             --card-bg: #ffffff;
             --card-text: #333;
             --footer-bg: #34495e;
             --footer-text: #ecf0f1;
         }
-    
+   
         [data-theme="dark"] {
             --bg-color: #0F0F1A;
             --text-color: #f4f4f4;
@@ -31,43 +31,43 @@
             --footer-bg: #080816;
             --footer-text: #ecf0f1;
         }
-    
+   
         /* General Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-    
+   
         /* Custom scrollbar styles */
         ::-webkit-scrollbar {
             width: 12px;
             background-color: var(--bg-color);
         }
-    
+   
         ::-webkit-scrollbar-thumb {
             background-color: var(--primary-color);
             border-radius: 10px;
             border: 2px solid var(--bg-color);
         }
-    
+   
         ::-webkit-scrollbar-thumb:hover {
             background-color: var(--secondary-color);
         }
-    
+   
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
         }
-    
+   
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-    
+   
         header {
             background-color: var(--header-bg);
             backdrop-filter: blur(10px);
@@ -156,15 +156,15 @@
         }
 
         /* Remove the margin-left from the existing .dark-mode-toggle style if it exists */
-    
-    
+   
+   
         /* Carousel Styles */
         .carousel {
             position: relative;
             height: 100vh;
             overflow: hidden;
         }
-    
+   
         .carousel-item {
             position: absolute;
             top: 0;
@@ -177,11 +177,11 @@
             transition: opacity 1s ease-in-out;
             backdrop-filter: blur(10px);
         }
-    
+   
         .carousel-item.active {
             opacity: 1;
         }
-    
+   
         .hero-content {
             position: absolute;
             top: 50%;
@@ -191,17 +191,17 @@
             color: #fff;
             z-index: 1;
         }
-    
+   
         .hero-content h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
-    
+   
         .hero-content p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
         }
-    
+   
         .cta-button {
             display: inline-block;
             background-color: var(--primary-color);
@@ -210,27 +210,26 @@
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 30px;
             transition: background-color 0.3s ease;
         }
-    
+   
         .cta-button:hover {
             background-color: var(--accent-color);
         }
-    
+   
         /* Projects Section */
         .projects {
             padding: 5rem 0;
             background-color: var(--bg-color);
         }
-    
+   
         .projects h2 {
             text-align: center;
             margin-bottom: 3rem;
             font-size: 2.5rem;
             color: var(--text-color);
         }
-    
+   
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -239,7 +238,7 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-    
+   
         .project-card {
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
@@ -256,7 +255,7 @@
             background-position: center center;
             background-repeat: no-repeat;
         }
-    
+   
         .project-card::before {
             content: '';
             position: absolute;
@@ -269,27 +268,27 @@
             z-index: 0;
             transition: opacity 0.3s ease;
         }
-    
+   
         .project-card:hover::before {
             opacity: 0.8;
         }
-    
+   
         .project-card-content {
             position: relative;
             z-index: 1;
             padding: 1rem;
             background-color: rgba(0, 0, 0, 0.5);
         }
-    
+   
         .project-card h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
-    
+   
         .project-card p {
             margin-bottom: 1rem;
         }
-    
+   
         .project-link {
             display: inline-block;
             background-color: var(--primary-color);
@@ -300,24 +299,24 @@
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
-    
+   
         .project-link:hover {
             background-color: var(--accent-color);
         }
-    
+   
         /* About Section */
         .about {
             background-color: var(--card-bg);
             padding: 5rem 0;
         }
-    
+   
         .about h2 {
             text-align: center;
             margin-bottom: 2rem;
             font-size: 2.5rem;
             color: var(--text-color);
         }
-    
+   
         .about p {
             max-width: 800px;
             margin: 0 auto;
@@ -326,7 +325,7 @@
             color: var(--text-color);
             padding: 0 20px;
         }
-    
+   
         /* Apply Section */
         .apply {
             background-color: var(--primary-color);
@@ -334,11 +333,11 @@
             text-align: center;
             color: #fff;
         }
-    
+   
         .apply h2 {
             margin-bottom: 1rem;
         }
-    
+   
         .apply p {
             max-width: 800px;
             margin: 0 auto 2rem;
@@ -346,12 +345,12 @@
             padding-left: 1rem;
             padding-right: 1rem;
         }
-    
+   
         .apply-image {
             width: 200px;
             margin-bottom: 2rem;
         }
-    
+   
         .apply-buttons {
             display: flex;
             justify-content: center;
@@ -359,7 +358,7 @@
             padding-left: 1rem;
             padding-right: 1rem;
         }
-    
+   
         .apply-button {
             display: inline-block;
             background-color: var(--secondary-color);
@@ -370,24 +369,24 @@
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
-    
+   
         .apply-button:hover {
             background-color: var(--accent-color);
         }
-    
+   
         /* Contact Section */
         .contact {
             padding: 5rem 0;
             background-color: var(--card-bg);
             color: var(--text-color);
         }
-    
+   
         .contact h2 {
             text-align: center;
             margin-bottom: 3rem;
             font-size: 2.5rem;
         }
-    
+   
         form {
             max-width: 600px;
             margin: 0 auto;
@@ -395,7 +394,7 @@
             flex-direction: column;
             padding: 0 20px;
         }
-    
+   
         form input,
         form textarea {
             margin-bottom: 1rem;
@@ -406,12 +405,12 @@
             background-color: var(--bg-color);
             color: var(--text-color);
         }
-    
+   
         form textarea {
             height: 150px;
             resize: vertical;
         }
-    
+   
         form button {
             background-color: var(--primary-color);
             color: #fff;
@@ -422,11 +421,11 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-    
+   
         form button:hover {
             background-color: var(--accent-color);
         }
-    
+   
         /* Footer */
         footer {
             background-color: var(--footer-bg);
@@ -434,19 +433,19 @@
             text-align: center;
             padding: 2rem 0;
         }
-    
+   
         .footer-logo {
             display: block;
             margin: 0 auto 1rem;
             width: auto;
             height: 100px;
         }
-    
+   
         .social-links {
             text-align: center;
             margin-bottom: 1rem;
         }
-    
+   
         .social-links a {
             display: inline-block;
             margin: 0 10px;
@@ -454,28 +453,28 @@
             font-size: 1.5rem;
             transition: color 0.3s ease;
         }
-    
+   
         .social-links a:hover {
             color: var(--accent-color);
         }
-    
+   
         footer p {
             font-size: 0.9rem;
         }
-    
+   
         /* Team Section */
         .team {
             background-color: var(--bg-color);
             padding: 5rem 0;
             text-align: center;
         }
-    
+   
         .team h2 {
             font-size: 2.5rem;
             color: var(--text-color);
             margin-bottom: 3rem;
         }
-    
+   
         .team-container {
             max-width: 900px;
             margin: 0 auto;
@@ -488,13 +487,13 @@
             flex-direction: column;
             min-height: 500px;
         }
-    
+   
         .team-slider {
             flex-grow: 1;
             position: relative;
             overflow: hidden;
         }
-    
+   
         .team-member {
             position: absolute;
             top: 0;
@@ -510,11 +509,11 @@
             padding: 1rem;
             text-align: center;
         }
-    
+   
         .team-member.active {
             opacity: 1;
         }
-    
+   
         .team-member img {
             width: 150px;
             height: 150px;
@@ -523,18 +522,18 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             margin-bottom: 1rem;
         }
-    
+   
         .team-info {
             text-align: center;
             max-width: 100%;
         }
-    
+   
         .team-info h3 {
             font-size: 1.8rem;
             color: var(--primary-color);
             margin-bottom: 0.5rem;
         }
-    
+   
         .team-info h4 {
             font-size: 1.2rem;
             color: var(--text-color);
@@ -545,14 +544,14 @@
             color: #ad9bfa;
             margin-bottom: 1rem;
         }
-    
+   
         .team-info p {
             font-style: italic;
             color: var(--text-color);
             margin-right: 1rem;
             margin-bottom: 2rem;
         }
-    
+   
         .team-nav {
             display: flex;
             justify-content: space-between;
@@ -561,7 +560,7 @@
             padding: 0 10px;
             box-sizing: border-box;
         }
-    
+   
         .team-nav button {
             background: none;
             border: none;
@@ -574,17 +573,17 @@
             width: 30px;
             height: 30px;
         }
-    
+   
         .team-nav button svg {
             width: 20px;
             height: 20px;
             fill: var(--primary-color);
         }
-    
+   
         .team-nav button:hover {
             transform: scale(1.1);
         }
-    
+   
         .progress-bar {
             flex-grow: 1;
             height: 4px;
@@ -928,107 +927,8 @@
     </header>
 
     <main>
-        <section id="home" class="hero carousel">
-            <div class="carousel-item active" style="background-image: url('/images/2024-09-14_00.37.07.png')"></div>
-            <div class="carousel-item" style="background-image: url('https://pbs.twimg.com/media/GRvfMFlXMAAduID?format=jpg&name=large')"></div>
-            <div class="carousel-item" style="background-image: url('https://www.exphost.net/images/image.png')"></div>
-            <div class="carousel-item" style="background-image: url('/images/Tropiclash (2).png')"></div>
-            <div class="carousel-item" style="background-image: url('/images/2024-08-24_20.30.11.png')"></div>
-            <div class="carousel-item" style="background-image: url('/images/Tropiclash (5).png')"></div>
-            <div class="carousel-item" style="background-image: url('/images/Tropiclash (6).png')"></div>
 
-            <div class="hero-content">
-                <h1>Welcome to AstroFox Studios</h1>
-                <p>Innovating Minecraft Experiences & Crafting New Worlds</p>
-                <a href="#news" class="cta-button">Our News!</a>
-            </div>
-        </section>
 
-        <section class="why-choose-us">
-            <h2>Why Trust AstroFox Studios?</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <i class="fas fa-gamepad"></i>
-                    <h3>Innovative Events</h3>
-                    <p>Experience unique Minecraft events and experiences crafted by our amazing team of developers.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Community Focus</h3>
-                    <p>Join a thriving community of not just Minecraft players but game developers and fans!</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-star"></i>
-                    <h3>Years of Experience</h3>
-                    <p>Founded in 2022 and creating events since 2021, you can benefit from our extensive knowledge in Minecraft development.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>Commission Work</h3>
-                    <p>Let us bring your Minecraft visions to life with custom commissions. While these are very rare, we love to welcome new projects!</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="meet-ceos">
-            <div class="container">
-                <h2>Meet Our CEOs</h2>
-                <div class="ceos-content">
-                    <img src="https://www.astrofoxstudios.com/images/Founders.png" alt="AstroFox Studios CEOs" class="ceos-image">
-                    <div class="ceos-text">
-                        <div class="ceo-info">
-                            <h3>Skye</h3>
-                            <p>With over 3 years of experience in Minecraft server development, our Founder and CEO Skye is great at team management and getting things done. She also knows her way around development and helps with making games and is able to give input as a leader.</p>
-                        </div>
-                        <div class="ceo-info">
-                            <h3>Lutraa</h3>
-                            <p>As a CEO at AstroFox Studios, Lutraa joined the company later but quickly became integral to our success. They manage multiple projects, excel in community engagement, and bring their 3D modeling skills to our creative endeavors.</p>
-                        </div>
-                        <p>Skye and Lutraa lead Astrofox with a perfect blend of expertise and fun, fostering a friendly and collaborative environment that drives our success.</p>
-                        <a href="#team" class="cta-button">Meet the Full Team</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    <section id="projects" class="projects">
-        <h2>Our Projects</h2>
-        <div class="project-grid">
-            <div class="project-card" style="background-image: url('/images/2024-09-14_00.37.07.png')">
-                <div class="project-card-content">
-                    <h3>Destiny Games</h3>
-                    <p>Epic Minecraft Events</p>
-                    <a href="https://destinygames.org" class="project-link">Learn More</a>
-                </div>
-            </div>
-            <div class="project-card" style="background-image: url('https://www.exphost.net/images/image.png')">
-                <div class="project-card-content">
-                    <h3>Exp Host</h3>
-                    <p>Premium Minecraft Hosting</p>
-                    <a href="https://exphost.net" class="project-link">Visit Site</a>
-                </div>
-            </div>
-            <div class="project-card" style="background-image: url('https://pbs.twimg.com/media/GRvfMFlXMAAduID?format=jpg&name=large')">
-                <div class="project-card-content">
-                    <h3>Tropiclash</h3>
-                    <p>MMO-RPG Minecraft Experience</p>
-                    <a href="https://tropiclash.net" class="project-link">Play Now</a>
-                </div>
-            </div>
-            <div class="project-card coming-soon" style="background-image: url('new-game-teaser.jpg')">
-                <div class="project-card-content">
-                    <h3>Standalone Game</h3>
-                    <p>Coming Soon</p>
-                    <a href="#" class="project-link">Stay Tuned</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <section id="about" class="about">
-            <h2>About AstroFox Studios</h2>
-            <p>Founded by passionate gamers and developers, AstroFox Studios is dedicated to creating innovative gaming experiences. From Minecraft events and hosting to MMO-RPG inspired servers, we're constantly pushing the boundaries of what's possible in the world of gaming.</p>
-        </section>
 
         <section id="news" class="projects">
             <h2>NEWS!</h2>
@@ -1062,15 +962,45 @@
                     </div>
                 </div>
             </div>
-            <div class="apply-buttons">
-                <a href="#" class="cta-button">More News Coming soon...</a>
-            </div>
-            
         </section>
-        
+     
+    <section id="projects" class="projects">
+        <h2>Our Projects</h2>
+        <div class="project-grid">
+            <div class="project-card" style="background-image: url('https://destinygames.org/images/2024-05-01_19.36.43.png')">
+                <div class="project-card-content">
+                    <h3>Destiny Games</h3>
+                    <p>Epic Minecraft Events</p>
+                    <a href="https://destinygames.org" class="project-link">Learn More</a>
+                </div>
+            </div>
+            <div class="project-card" style="background-image: url('https://www.exphost.net/images/image.png')">
+                <div class="project-card-content">
+                    <h3>Exp Host</h3>
+                    <p>Premium Minecraft Hosting</p>
+                    <a href="https://exphost.net" class="project-link">Visit Site</a>
+                </div>
+            </div>
+            <div class="project-card" style="background-image: url('https://pbs.twimg.com/media/GRvfMFlXMAAduID?format=jpg&name=large')">
+                <div class="project-card-content">
+                    <h3>Tropiclash</h3>
+                    <p>MMO-RPG Minecraft Experience</p>
+                    <a href="https://tropiclash.net" class="project-link">Play Now</a>
+                </div>
+            </div>
+            <div class="project-card coming-soon" style="background-image: url('new-game-teaser.jpg')">
+                <div class="project-card-content">
+                    <h3>Standalone Game</h3>
+                    <p>Coming Soon</p>
+                    <a href="#" class="project-link">Stay Tuned</a>
+                </div>
+            </div>
+        </div>
+    </section>
+       
 
         <section id="apply" class="apply">
-            
+           
             <img src="https://www.astrofoxstudios.com/images/image31.png" alt="We Need You" class="apply-image">
             <h1>Join Our Team</h1>
             <p>Are you passionate about gaming and development? We're looking for talented individuals to join our team and help shape the future of Minecraft experiences. Whether you're a skilled developer, creative designer, or enthusiastic tester, we want to hear from you!</p>
@@ -1080,240 +1010,6 @@
             </div>
         </section>
 
-        <section id="contact" class="contact">
-            <h2>Get in Touch</h2>
-            <div class="social-links">
-              <a href="https://www.youtube.com/channel/UCamVCCPTcTfXqHCOJp5i0Fw"><i class="fab fa-youtube"></i></a>
-              <a href="https://twitter.com/AstroFoxStudios"><i class="fab fa-twitter"></i></a>
-              <a href="https://discord.gg/aDHpp2fQn3"><i class="fab fa-discord"></i></a>
-            </div>
-        </section>
-    </main>
-    <section id="team" class="team">
-      <h2>Meet the Team</h2>
-      <div class="team-container">
-          <div class="team-slider">
-              <div class="team-member active">
-                  <img src="https://minepic.org/avatar/1c6aa3ff32a542228261c782aa1e7c4b" alt="Arctic Fox">
-                  <div class="team-info">
-                      <h3>Arctic Fox</h3>
-                      <h5>CEO & Founder of AstroFox Studios</h4>
-                      <p>Hiya, I'm Arctic and I'm the head and founder of AstroFox Studios! The jobs I do around here consist of coding, resource pack management, and much more on the social side of things.</p>
-                  </div>
-              </div>
-              <div class="team-member">
-                  <img src="https://minepic.org/avatar/ea4f96f721294c2ba027ff7c831b4a4a" alt="Lutraa">
-                  <div class="team-info">
-                      <h3>Lutraa</h3>
-                      <h5>CEO & Founder of Tropiclash</h4>
-                      <p>Hi, ​I'm Lutraa and I'm the founder of Tropiclash! I have an obsession for otters and I do a lot behind-the-scenes. I also make the majority of the announcements in the discord!</p>
-                  </div>
-              </div>
-              <div class="team-member">
-                  <img src="https://minepic.org/avatar/exp_yt" alt="Exp">
-                  <div class="team-info">
-                      <h3>Exp</h3>
-                      <h5>COO & Founder of Exp Host</h4>
-                      <p>Hola! I'm Exp and I'm the founder of Exp Host. I am also the head of socials here at Astrofox and I speak Spanish!</p>
-                  </div>
-              </div>
-              <div class="team-member">
-                <img src="https://minepic.org/avatar/4088ad3f2fbe423d9b067028a5637771" alt="Frog">
-                <div class="team-info">
-                    <h3>Frog</h3>
-                    <h5>COO & Head of Backend</h4>
-                    <p>Hi, I'm Frog and im the lead developer here at Astrofox and I'm very skilled at Skript and Java coding. I also like to mess around on Minecraft with the AstroFox staff!</p>
-                </div>
-            </div>
-            <div class="team-member">
-              <img src="https://minepic.org/avatar/logybanana" alt="Logy">
-              <div class="team-info">
-                  <h3>LogyBanana</h3>
-                  <h5>Board Member & Head Builder</h4>
-                  <p>Hey! I'm Logy, I'm a builder for Astrofox Studios and I help with blockbench models aswell sometimes.</p>
-              </div>
-          </div>
-          <div class="team-member">
-            <img src="https://minepic.org/avatar/xMistySenpai" alt="Logiv">
-            <div class="team-info">
-                <h3>Logic</h3>
-                <h5>Board Member & Sysadmin at Exp Host</h5>
-                <p>"Hello there, I'm the System Administrator here at Astrofox Studios. I keep things functioning smoothly, so you can enjoy all we have to offer!</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <img src="https://minepic.org/avatar/malvare_" alt="Mal">
-            <div class="team-info">
-                <h3>Malvare</h3>
-                <h5>Board Member & Staff Manager</h4>
-                <p>Hey I'm Mal, Staff Manager at AstroFox, I do many things around here such as, Building, Team Making, and Conceptualizing the Games!</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <img src="https://minepic.org/avatar/dbtderpbox" alt="Emmie">
-            <div class="team-info">
-                <h3>Emmie</h3>
-                <h4>The one who cooks.</h4>
-                <p>"I am the one who cooks microwave meals."</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <img src="https://minepic.org/avatar/FoxMaster198" alt="FoxMaster">
-            <div class="team-info">
-                <h3>FoxMaster</h3>
-                <h4>Java Developer at Destiny Games</h4>
-                <p>"You should make off-site backups" - Fox (a week before Neptune Node)</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <img src="https://minepic.org/avatar/juneylove" alt="Juney">
-            <div class="team-info">
-                <h3>Juney</h3>
-                <h4>Head Developer at Tropiclash</h4>
-                <p>???</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <img src="https://minepic.org/avatar/itsasquid2" alt="Squid">
-            <div class="team-info">
-                <h3>Squid</h3>
-                <h4>Developer at Destiny Games</h4>
-                <p>Hi! I'm Squid and I'm a developer of Destiny Games. I love making lobby games with skript in my free time and I handle some game mechanics as well!</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <img src="https://minepic.org/avatar/mebeiris" alt="Iris">
-            <div class="team-info">
-                <h3>Iris</h3>
-                <h4>Developer at Destiny Games</h4>
-                <p>Hello I'm Iris, I am a Skript developer that's currently learning Java. You'll probably see some of my work around Astrofox Studios as I do a bunch of random stuff.</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <img src="https://minepic.org/avatar/emperorellz" alt="Ellz">
-            <div class="team-info">
-                <h3>Ellz</h3>
-                <h4>Developer at Destiny Games</h4>
-                <p>Hi, I'm Ellz and I am a developer at Destiny Games. I love football and play right back for my team. I play a lot of minecraft and love events such as the one I am working on.</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <img src="https://minepic.org/avatar/selenodot" alt="Mia">
-            <div class="team-info">
-                <h3>Mia</h3>
-                <h4>Community Lead</h4>
-                <p>Hi! I'm Mia, I work as a Community Lead at Destiny Games and Tropiclash. I also do game design in my freetime :3</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <img src="https://minepic.org/avatar/RefusedSprinklez" alt="RefusedSprinklez">
-            <div class="team-info">
-                <h3>RefusedSprinklez</h3>
-                <h4>Musician and SFX Maker</h4>
-                <p>I compose captivating musical journeys that evoke emotions and spark inspiration through my services as a skilled music composition composer/producer based in San Antonio, TX. Don't hesitate to reach out to discuss commissioning or any other inquiries.</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <img src="https://minepic.org/avatar/CorruptChimpYT" alt="Corrupt Chimpy">
-            <div class="team-info">
-                <h3>Corrupt Chimpy</h3>
-                <h4>Game Designer at Destiny Games</h4>
-                <p>Hi, I'm Corrupt Chimpy. I help build for Destiny Games and I also help design games sometimes.</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <img src="https://minepic.org/avatar/EggMation" alt="Corrupt Chimpy">
-            <div class="team-info">
-                <h3>Matrix</h3>
-                <h4>Testing Manager at Destiny Games</h4>
-                <p>Hola! I'm Matrix. I am one of the Testing Managers for Destiny Games, and I come up with ideas for Astrofox!</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <img src="https://minepic.org/avatar/Biera_" alt="Biera_">
-            <div class="team-info">
-                <h3>Biera</h3>
-                <h4>Head Player Manager at Destiny Games</h4>
-                <p>Hey, I'm Biera! I manage the events' player roster and work on team making, making sure they're all fun and balanced :D</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <img src="https://minepic.org/avatar/Reiny" alt="Reiny">
-            <div class="team-info">
-                <h3>Reiny</h3>
-                <h4>Builder at Astrofox</h4>
-                <p>Hello, I'm Reiny! I am just a builder who's secretly a master in detailing. I rarely have any idea of what I am doing but it always ends up looking professional.</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <img src="https://minepic.org/avatar/Gl1tch404_" alt="Glitch">
-            <div class="team-info">
-                <h3>Glitch</h3>
-                <h4>Builder at Astrofox</h4>
-                <p>???</p>
-            </div>
-          </div>
-          </div>
-          <div class="team-nav">
-              <button class="prev-member">
-                  <svg viewBox="0 0 24 24">
-                      <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-                  </svg>
-              </button>
-              <div class="progress-bar">
-                  <div class="progress-segment active"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-                  <div class="progress-segment"></div>
-              </div>
-              <button class="next-member">
-                  <svg viewBox="0 0 24 24">
-                      <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
-                  </svg>
-              </button>
-          </div>
-      </div>
-    </section>  
-    <section id="faq" class="faq">
-      <div class="container">
-          <h2>Frequently Asked Questions</h2>
-          <div class="faq-grid">
-              <div class="faq-item">
-                  <h3>How can I apply for staff?</h3>
-                  <p class="faq-answer">You can apply for staff by pressing the "Apply for Staff" button in the Join Our Team section!</p>
-              </div>
-              <div class="faq-item">
-                  <h3>How can I play in Destiny Games?</h3>
-                  <p class="faq-answer">Destiny Games is an invite-only event, however you can apply for testing today!</p>
-              </div>
-              <div class="faq-item">
-                  <h3>Can I get a free ExpHost Server?</h3>
-                  <p class="faq-answer">No, as a company we need to make a profit and we can not do that with people having free servers.</p>
-              </div>
-              <div class="faq-item">
-                  <h3>How do I join Tropiclash?</h3>
-                  <p class="faq-answer">Tropiclash will be a public Minecraft Java server on the latest versions of Minecraft, but it is still in development. Stay tuned for updates!</p>
-                 
-              </div>
-          </div>
-      </div>
-  </section>
 
     <footer>
         <a href="https://astrofoxstudios.com">
@@ -1330,25 +1026,25 @@
         // Carousel functionality
         const carouselItems = document.querySelectorAll('.carousel-item');
         let currentItem = 0;
-    
+   
         function showNextItem() {
             carouselItems[currentItem].classList.remove('active');
             currentItem = (currentItem + 1) % carouselItems.length;
             carouselItems[currentItem].classList.add('active');
         }
-    
+   
         setInterval(showNextItem, 5000); // Change image every 5 seconds
-    
+   
         // FAQ functionality
         document.addEventListener('DOMContentLoaded', function () {
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 const question = item.querySelector('h3');
                 const answer = item.querySelector('.faq-answer');
-                
+               
                 question.addEventListener('click', () => {
                     answer.classList.toggle('active');
-                    
+                   
                     faqItems.forEach(otherItem => {
                         if (otherItem !== item) {
                             otherItem.querySelector('.faq-answer').classList.remove('active');
@@ -1357,7 +1053,7 @@
                 });
             });
         });
-    
+   
         // Team slideshow functionality
         const teamMembers = document.querySelectorAll('.team-member');
         const prevButton = document.querySelector('.prev-member');
@@ -1366,7 +1062,7 @@
         let currentMember = 0;
         let timeOut = 8500;
         let slideshowInterval;
-    
+   
         function showMember(index) {
             teamMembers[currentMember].classList.remove('active');
             teamMembers[index].classList.add('active');
@@ -1374,38 +1070,38 @@
             progressSegments[index].classList.add('active');
             currentMember = index;
         }
-    
+   
         function showNextMember() {
             showMember((currentMember + 1) % teamMembers.length);
             updateTimeout(15000);
         }
-    
+   
         function showPrevMember() {
             showMember((currentMember - 1 + teamMembers.length) % teamMembers.length);
             updateTimeout(15000);
         }
-    
+   
         function updateTimeout(newTimeout) {
             timeOut = newTimeout;
             clearInterval(slideshowInterval);
             slideshowInterval = setInterval(showNextMember, timeOut);
         }
-    
+   
         nextButton.addEventListener('click', showNextMember);
         prevButton.addEventListener('click', showPrevMember);
-    
+   
         slideshowInterval = setInterval(showNextMember, timeOut);
-    
+   
         // Dark mode functionality
         const darkModeToggle = document.getElementById('darkModeToggle');
         const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    
+   
         function setTheme(theme) {
             document.documentElement.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
             updateToggleButton(theme);
         }
-    
+   
         function updateToggleButton(theme) {
             const icon = darkModeToggle.querySelector('i');
             if (theme === 'dark') {
@@ -1416,18 +1112,18 @@
                 icon.classList.add('fa-moon');
             }
         }
-    
+   
         // Check for saved user preference, otherwise use system preference
         const savedTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
         setTheme(savedTheme);
-    
+   
         // Listen for toggle button click
         darkModeToggle.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             setTheme(newTheme);
         });
-    
+   
         // Listen for system preference changes
         prefersDarkScheme.addListener((e) => {
             if (!localStorage.getItem('theme')) {
