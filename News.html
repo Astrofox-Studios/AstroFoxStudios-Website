@@ -13,7 +13,7 @@
             --accent-color: #FF4DFF;
             --bg-color: #f4f4f4;
             --text-color: #333;
-            --header-bg: rgba(44, 62, 80, 0.4);
+            --header-bg: #2c3e5066;
             --header-text: #ecf0f1;
             --card-bg: #ffffff;
             --card-text: #333;
@@ -210,6 +210,7 @@
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
+            margin-top: 30px;
             transition: background-color 0.3s ease;
         }
    
@@ -227,6 +228,12 @@
             text-align: center;
             margin-bottom: 3rem;
             font-size: 2.5rem;
+            color: var(--text-color);
+        }
+              .projects h1 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
             color: var(--text-color);
         }
    
@@ -926,12 +933,9 @@
         </nav>
     </header>
 
-    <main>
-
-
-
         <section id="news" class="projects">
             <h2>NEWS!</h2>
+            <h1>Recent</h1>
             <div class="project-grid">
                 <div class="project-card" style="background-image: url('/images/2024-08-24_20.30.11.png')">
                     <div class="project-card-content">
@@ -960,14 +964,39 @@
                         <p>Tropiclash is an exciting public Minecraft server in development!</p>
                         <a href="https://www.astrofoxstudios.com/WhatIsTropiclash" class="project-link">Read More</a>
                     </div>
+                 
                 </div>
             </div>
+          <h1>Older</h1>
+           
         </section>
-     
+       
+
+        <section id="apply" class="apply">
+           
+            <img src="https://www.astrofoxstudios.com/images/image31.png" alt="We Need You" class="apply-image">
+            <h1>Join Our Team</h1>
+            <p>Are you passionate about gaming and development? We're looking for talented individuals to join our team and help shape the future of Minecraft experiences. Whether you're a skilled developer, creative designer, or enthusiastic tester, we want to hear from you!</p>
+            <div class="apply-buttons">
+                <a href="https://forms.gle/JTfJMNg5rS5i38rD9" class="apply-button">Apply for Staff</a>
+                <a href="https://forms.gle/7yPBY7xNvz63aLCM8" class="apply-button">Apply for Beta Testing</a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Get in Touch</h2>
+            <div class="social-links">
+              <a href="https://www.youtube.com/channel/UCamVCCPTcTfXqHCOJp5i0Fw"><i class="fab fa-youtube"></i></a>
+              <a href="https://twitter.com/AstroFoxStudios"><i class="fab fa-twitter"></i></a>
+              <a href="https://discord.gg/aDHpp2fQn3"><i class="fab fa-discord"></i></a>
+            </div>
+        </section>
+    </main>
+ 
     <section id="projects" class="projects">
         <h2>Our Projects</h2>
         <div class="project-grid">
-            <div class="project-card" style="background-image: url('https://destinygames.org/images/2024-05-01_19.36.43.png')">
+            <div class="project-card" style="background-image: url('/images/2024-09-14_00.37.07.png')">
                 <div class="project-card-content">
                     <h3>Destiny Games</h3>
                     <p>Epic Minecraft Events</p>
@@ -997,19 +1026,6 @@
             </div>
         </div>
     </section>
-       
-
-        <section id="apply" class="apply">
-           
-            <img src="https://www.astrofoxstudios.com/images/image31.png" alt="We Need You" class="apply-image">
-            <h1>Join Our Team</h1>
-            <p>Are you passionate about gaming and development? We're looking for talented individuals to join our team and help shape the future of Minecraft experiences. Whether you're a skilled developer, creative designer, or enthusiastic tester, we want to hear from you!</p>
-            <div class="apply-buttons">
-                <a href="https://forms.gle/JTfJMNg5rS5i38rD9" class="apply-button">Apply for Staff</a>
-                <a href="https://forms.gle/7yPBY7xNvz63aLCM8" class="apply-button">Apply for Beta Testing</a>
-            </div>
-        </section>
-
 
     <footer>
         <a href="https://astrofoxstudios.com">
@@ -1034,63 +1050,6 @@
         }
    
         setInterval(showNextItem, 5000); // Change image every 5 seconds
-   
-        // FAQ functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const question = item.querySelector('h3');
-                const answer = item.querySelector('.faq-answer');
-               
-                question.addEventListener('click', () => {
-                    answer.classList.toggle('active');
-                   
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.querySelector('.faq-answer').classList.remove('active');
-                        }
-                    });
-                });
-            });
-        });
-   
-        // Team slideshow functionality
-        const teamMembers = document.querySelectorAll('.team-member');
-        const prevButton = document.querySelector('.prev-member');
-        const nextButton = document.querySelector('.next-member');
-        const progressSegments = document.querySelectorAll('.progress-segment');
-        let currentMember = 0;
-        let timeOut = 8500;
-        let slideshowInterval;
-   
-        function showMember(index) {
-            teamMembers[currentMember].classList.remove('active');
-            teamMembers[index].classList.add('active');
-            progressSegments[currentMember].classList.remove('active');
-            progressSegments[index].classList.add('active');
-            currentMember = index;
-        }
-   
-        function showNextMember() {
-            showMember((currentMember + 1) % teamMembers.length);
-            updateTimeout(15000);
-        }
-   
-        function showPrevMember() {
-            showMember((currentMember - 1 + teamMembers.length) % teamMembers.length);
-            updateTimeout(15000);
-        }
-   
-        function updateTimeout(newTimeout) {
-            timeOut = newTimeout;
-            clearInterval(slideshowInterval);
-            slideshowInterval = setInterval(showNextMember, timeOut);
-        }
-   
-        nextButton.addEventListener('click', showNextMember);
-        prevButton.addEventListener('click', showPrevMember);
-   
-        slideshowInterval = setInterval(showNextMember, timeOut);
    
         // Dark mode functionality
         const darkModeToggle = document.getElementById('darkModeToggle');
