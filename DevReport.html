@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroFox Studios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="post.css">
+    <style>
+        .title-box {
+            width: 80%;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: url('/images/dev.png') no-repeat center center;
+            background-size: cover;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .image {
+            width: 80%;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="https://www.astrofoxstudios.com/images/logo.png" alt="AstroFox Studios Logo">
+                <span>AstroFox Studios</span>
+            </div>
+            <button class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="https://www.astrofoxstudios.com/">Home</a></li>
+                    <li><a href="https://www.astrofoxstudios.com/#projects">Projects</a></li>
+                    <li><a href="https://www.astrofoxstudios.com/#news">NEWS</a></li>
+                    <li><a href="https://www.astrofoxstudios.com/#apply">Apply</a></li>
+                    <li><a href="https://www.astrofoxstudios.com/#team">Team</a></li>
+                    <li>
+                        <button id="darkModeToggle" class="dark-mode-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="title-box">
+            <h1>DevReport</h1>
+        </div>
+
+        <div class="section-title">
+            <h2>In-Depth look at Tester 4</h2>
+        </div>
+
+        <div class="section-text">
+            <h2>TLDR;</h2>
+            <p>If you aren't a dev or don't want to read all of this here is what happened: Destiny Games is run on a language called Skript, our Skript systems are normally quite efficient as seen in Wipeout at the end of the event, but in the cases of the lag seen on the streams we had a lot of inefficient systems.</p>
+        </div>
+        <img src="/images/nuhuh.png" alt="AstroFox Studios" class="image">
+
+        <div class="section-text">
+            <h2>VoidHunters</h2>
+            <p>VoidHunters was one of the most if not the most laggy game of Tester 4 with it crashing the server, but luckily we now know why! VoidHunters was looping over 1600 blocks every time someone broke a concrete powder... I'm not kidding it was that bad. The main reason for it being coded this badly is that VoidHunters was coded nearly 2 years ago by Skye as one of her first games. You will all be happy to know this has already been fixed and we will be stress testing in the coming days! Also, we have added more of what we call 'Stop Checks'. These check to see if the /event PANIC command has been triggered and stop the game.</p>
+        </div>
+        <img src="/images/mstp.png" alt="AstroFox Studios" class="image">
+
+        <div class="section-text">
+            <h2>Cosmic</h2>
+            <p>Cosmic's lag is a similar point, basically there are way too many things happening at once. For Cosmic, the case was way too many variables being set at the same time, because of this the server did something called hanging, basically it stops doing anything because it has too much to do. Sounds like me! This is being fixed by Squid right now but trust me it's not good at all as it is LOL. We are also going to add in a NEW x3 Loot pool... We have redone that about 10 times now.</p>
+        </div>
+        <img src="/images/hang.png" alt="AstroFox Studios" class="image">
+
+        <div class="section-text">
+            <h2>Speed Through Space</h2>
+            <p>The lag in Spped Through Space is basically the same. (See what I did there?) STS is built on the same framework as Cosmic, at checkpoints and starting the race, way too many variables are being set. Should be fixed by a simple timer and checkpoint rewrite though!</p>
+        </div>
+        <img src="/images/sts.png" alt="AstroFox Studios" class="image">
+
+        <div class="section-text">
+            <h2>Over All,</h2>
+            <p>The lag in the event is very fixable. Yes it will take us some time but as far as issues go this isn't the worst we have faced. (Yk the whole getting hacked mid event thing.) The event should resume pretty quickly and thanks for reading!</p>
+        </div>
+
+        <div class="section-text">
+            <h2>Also Wipeout Worked :D,</h2>
+            <p>The only game that worked was itsasquid2's game "Wipeout Rush" so uh, good job itsasquid2!</p>
+        </div>
+        <img src="/images/2023-12-25_22.07.29.png" alt="AstroFox Studios" class="image">
+    </div>
+
+    <footer>
+        <a href="https://astrofoxstudios.com">
+            <img src="https://www.astrofoxstudios.com/images/image.png" alt="AstroFox Studios" class="footer-logo">
+        </a>
+        <div class="social-links">
+            <a href="https://www.youtube.com/channel/UCamVCCPTcTfXqHCOJp5i0Fw"><i class="fab fa-youtube"></i></a>
+            <a href="https://twitter.com/AstroFoxStudios"><i class="fab fa-twitter"></i></a>
+            <a href="https://discord.gg/aDHpp2fQn3"><i class="fab fa-discord"></i></a>
+        </div>
+        <p>&copy; 2024 AstroFox Studios. All rights reserved.</p>
+    </footer>
+    <script>
+        // Dark mode functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            updateToggleButton(theme);
+        }
+    
+        function updateToggleButton(theme) {
+            const icon = darkModeToggle.querySelector('i');
+            if (theme === 'dark') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+    
+        // Check for saved user preference, otherwise use system preference
+        const savedTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
+        setTheme(savedTheme);
+    
+        // Listen for toggle button click
+        darkModeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+    
+        // Listen for system preference changes
+        prefersDarkScheme.addListener((e) => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+
+        function toggleMenu() {
+            navLinks.classList.toggle('active');
+            menuIcon.classList.toggle('active');
+        }
+
+        menuIcon.addEventListener('click', toggleMenu);
+
+        // Close menu when a link is clicked
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && !e.target.closest('nav') && !e.target.closest('.nav-links')) {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('active');
+            }
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuIcon = document.querySelector('.menu-icon');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuIcon.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        });
+
+    </script>
+    <style>
+        @media (max-width: 768px) {
+          .nav-links { display: none; }
+          .menu-icon { display: block !important; }
+        }
+        </style>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const menuIcon = document.querySelector('.menu-icon');
+          const navLinks = document.querySelector('.nav-links');
+          menuIcon.addEventListener('click', function() {
+            navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
+          });
+        });
+        </script>
+</body>
+</html>
